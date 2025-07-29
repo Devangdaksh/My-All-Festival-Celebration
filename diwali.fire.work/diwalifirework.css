@@ -1,0 +1,212 @@
+/*---------------
+    basic styles
+----------------*/
+
+body {
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    background-color: #000;
+}
+
+/* Make the canvas cover the entire screen and stay fixed */
+#my-canvas {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Center the .box element and style its color */
+.box {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #FCB10B;
+}
+
+/* Import custom font for headings/text */
+@font-face {
+    font-family: dosis;
+    src: url("FuzzyBubbles-Bold.ttf");
+}
+
+/* Style the text inside .box with font, size, and glowing effect */
+.box p {
+    font-size: 36px;
+    font-family: dosis;
+    letter-spacing: 4px;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px #FCB10B,
+                 0 0 20px #FCB10B,
+                 0 0 40px #FCB10B,
+                 0 0 80px #FCB10B,
+                 0 0 120px #FCB10B;
+}                 
+
+/* -------------------------------------------
+   SOCIAL MEDIA ICON STYLES
+------------------------------------------- */
+.social-icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.social-icon {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+}
+
+.social-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.social-icon span.tooltip {
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #e91e63;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.social-icon:hover span.tooltip {
+    opacity: 1;
+}
+
+.social-icon:hover svg {
+    fill: #e91e63;
+}
+
+/*---------------- 
+  Popup Overlay 
+-----------------*/
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+/* Show popup when active */
+.popup-overlay.active {
+  display: flex;
+}
+
+/*---------------- 
+  Popup Box 
+-----------------*/
+.popup-box {
+  background: linear-gradient(to bottom right, #fda085, #f6d365);
+  padding: 2rem;
+  width: 90%;
+  max-width: 400px;
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  font-family: sans-serif;
+}
+
+/*---------------- 
+  Close Button 
+-----------------*/
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/*---------------- 
+  Action Button 
+-----------------*/
+.action-btn {
+  margin-top: 1rem;
+  background-color: white;
+  border: 2px solid #333;
+  padding: 0.75rem 1.5rem;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.action-btn:hover {
+  background-color: #f0f0f0;
+}
+
+/* -------------------------------------------
+   FLOATING SOCIAL MEDIA ICONS
+------------------------------------------- */
+.social-icons.floating-vertical {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    flex-direction: column;
+    gap: 18px;
+    z-index: 10000;
+    background: none;
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+}
+
+.social-icons.floating-vertical .social-icon {
+    margin: 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+/*--------------------------------------------
+   AUTHOR NAME STYLES
+--------------------------------------------*/
+.author-name {
+    position: fixed;
+    left: 32px;
+    bottom: 10px;
+    color: limegreen;
+    font-size: 1.1rem;
+    font-family: dosis, sans-serif;
+    z-index: 10001;
+    background: rgba(0,0,0,0.4);
+    padding: 2px 10px;
+    border-radius: 6px;
+    letter-spacing: 1px;
+}
