@@ -10,12 +10,6 @@ A collection of festive web projects to celebrate major festivals with interacti
   - Floating social media icons
   - Popup notification for unavailable links
 
-- **Raksha Bandhan Hand Animation**
-  - Interactive Rakhi tying ritual animation
-  - Traditional elements: aarti thali, sweets, marigold flowers
-  - Animated hands and celebratory effects
-  - Restartable ritual and festive final message
-
 *(Add more festival projects here as you create them!)*
 
 ## Folder Structure
@@ -30,19 +24,14 @@ My All Festival Celebration/
 │   ├── diwalifirework.js
 │   └── FuzzyBubbles-Bold.ttf
 │
-├── raksha bandhan/
-│   ├── rakhi.html
-│   ├── style.css
-│   ├── script.js
-│
 └── ... (other festival folders)
 ```
 
 ## How to Use
 
 1. **Clone or Download** this repository.
-2. Open any festival folder (e.g., `diwali.fire.work` or `raksha bandhan`).
-3. Open the main HTML file (e.g., `diwalifirework.html` or `rakhi.html`) in your browser.
+2. Open any festival folder (e.g., `diwali.fire.work`).
+3. Open the main HTML file (e.g., `diwalifirework.html`) in your browser.
 4. Enjoy the celebration page!
 
 ## Customization
@@ -59,4 +48,4 @@ My All Festival Celebration/
 
 ---
 
-**Celebrate every festival with joy and enthusiasm!**
+**Celebrate every festival
