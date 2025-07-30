@@ -1,0 +1,541 @@
+/* -----------------------------
+   RESET & BASE STYLES
+-----------------------------*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f29e62 0%, #dd8045 50%, #ce6d0e 100%);
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+/* -------------------------------
+   VISIBILITY STATE CLASSES
+---------------------------------*/
+.active {
+    display: flex;
+    opacity: 1;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.hidden {
+    display: none;
+    opacity: 0;
+}
+
+/* -------------------------------
+   GREETING SECTION STYLING
+---------------------------------*/
+#greeting-container {
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    cursor: pointer;
+}
+
+#greeting-message {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    position: relative;
+    backdrop-filter: blur(10px);
+}
+
+#greeting-message h1 {
+    color: #a61012;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#greeting-message p {
+    color: #521101;
+    font-size: 1.2rem;
+    font-style: italic;
+}
+
+/*  -----------------------------
+   MARIGOLD FLOWER DECORATION
+---------------------------------*/
+.marigold {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(circle, #ffd700 30%, #f29e62 70%);
+    border-radius: 50%;
+    top: -20px;
+}
+
+.marigold.left {
+    left: -30px;
+    transform: rotate(-15deg);
+}
+
+.marigold.right {
+    right: -30px;
+    transform: rotate(15deg);
+}
+
+.marigold::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, #ff8c00 20%, transparent 50%);
+    border-radius: 50%;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+/* -------------------------------
+   ANIMATION CONTAINER & SCENE
+---------------------------------*/
+#animation-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#rakhi-scene {
+    position: relative;
+    width: 800px;
+    height: 600px;
+}
+
+/* -------------------------------
+   MAN'S HAND STYLING
+---------------------------------*/
+.man-hand {
+    position: absolute;
+    right: 100px;
+    top: 250px;
+    z-index: 2;
+}
+
+.hand-base {
+    width: 180px;
+    height: 60px;
+    background: linear-gradient(135deg, #f19d61 0%, #d4753b 100%);
+    border-radius: 30px 30px 40px 40px;
+    position: relative;
+    transform: rotate(-10deg);
+    box-shadow: 0 8px 20px rgba(82, 17, 1, 0.3);
+}
+
+.wrist {
+    width: 80px;
+    height: 40px;
+    background: inherit;
+    position: absolute;
+    right: -20px;
+    top: 30px;
+    border-radius: 20px;
+    transform: rotate(-10deg);
+}
+
+.sleeve {
+    width: 120px;
+    height: 50px;
+    background: linear-gradient(135deg, #a61012 0%, #521101 100%);
+    position: absolute;
+    right: -40px;
+    top: 40px;
+    border-radius: 25px;
+    transform: rotate(-10deg);
+}
+
+/* -------------------------------
+   RAKHI THREAD & CENTER
+---------------------------------*/
+.rakhi-container {
+    position: absolute;
+    right: 140px;
+    top: 270px;
+    z-index: 5;
+}
+
+.rakhi-thread {
+    width: 200px;
+    height: 4px;
+    background: linear-gradient(90deg, #a61012 0%, #521101 50%, #a61012 100%);
+    position: absolute;
+    border-radius: 2px;
+    opacity: 0;
+    transform: scale(0);
+    transition: all 1s ease-in-out;
+}
+
+.rakhi-center {
+    width: 40px;
+    height: 40px;
+    background: radial-gradient(circle, #ffd700 30%, #a61012 70%);
+    border-radius: 50%;
+    position: absolute;
+    left: 80px;
+    top: -18px;
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.8s ease-in-out 0.5s;
+    box-shadow: 0 4px 15px rgba(166, 16, 18, 0.4);
+}
+
+.rakhi-gem {
+    width: 12px;
+    height: 12px;
+    background: radial-gradient(circle, #ff6b6b 0%, #a61012 100%);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: sparkle 2s ease-in-out infinite alternate;
+}
+
+.rakhi-design {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #521101;
+    border-radius: 50%;
+    opacity: 0.7;
+}
+
+/* -------------------------------
+   SISTER'S HANDS
+---------------------------------*/
+.sister-hands {
+    position: absolute;
+    left: 50px;
+    top: 150px;
+    z-index: 4;
+}
+
+.sister-hand {
+    position: absolute;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.left-hand {
+    left: 40px;
+    top: 50px;
+    transform: rotate(25deg) translateY(30px);
+}
+
+.right-hand {
+    left: 60px;
+    top: 80px;
+    transform: rotate(-15deg) translateY(30px);
+}
+
+.hand-palm,
+.fingers,
+.thumb {
+    background: linear-gradient(135deg, #f39f63 0%, #dc7f44 100%);
+}
+
+.hand-palm {
+    width: 70px;
+    height: 100px;
+    border-radius: 35px 35px 20px 20px;
+    position: relative;
+    box-shadow: 0 6px 15px rgba(82, 17, 1, 0.2);
+}
+
+.fingers {
+    width: 60px;
+    height: 40px;
+    border-radius: 30px 30px 5px 5px;
+    position: absolute;
+    top: -30px;
+    left: 5px;
+}
+
+.thumb {
+    width: 25px;
+    height: 35px;
+    border-radius: 12px;
+    position: absolute;
+    left: -15px;
+    top: 20px;
+    transform: rotate(-30deg);
+}
+
+.bangles {
+    width: 85px;
+    height: 25px;
+    border: 3px solid #ffd700;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -5px;
+    left: -7px;
+    background: linear-gradient(135deg, transparent 40%, #ffd700 60%);
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.bangles::before {
+    content: '';
+    position: absolute;
+    width: 75px;
+    height: 20px;
+    border: 2px solid #ff8c00;
+    border-radius: 50%;
+    top: -8px;
+    left: 2px;
+}
+
+/*  -------------------------------
+   AARTI THALI & SWEETS
+---------------------------------*/
+.aarti-thali {
+    position: absolute;
+    left: 20px;
+    bottom: 50px;
+    z-index: 1;
+}
+
+.thali-base {
+    width: 120px;
+    height: 20px;
+    background: linear-gradient(135deg, #ffd700 0%, #ce6d0e 100%);
+    border-radius: 50%;
+    box-shadow: 0 5px 15px rgba(206, 109, 14, 0.3);
+}
+
+.diya {
+    width: 30px;
+    height: 15px;
+    background: linear-gradient(135deg, #ff8c00 0%, #ce6d0e 100%);
+    border-radius: 50%;
+    position: absolute;
+    left: 45px;
+    top: -8px;
+}
+
+.flame {
+    width: 8px;
+    height: 20px;
+    background: linear-gradient(to top, #ff4500 0%, #ffd700 100%);
+    border-radius: 50% / 60%;
+    position: absolute;
+    left: 56px;
+    top: -25px;
+    animation: flicker 1.5s ease-in-out infinite alternate;
+}
+
+.sweets {
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle, #f29e62 50%, #ce6d0e 100%);
+    border-radius: 50%;
+    position: absolute;
+    left: 20px;
+    top: -10px;
+}
+
+.sweets::after {
+    content: '';
+    width: 15px;
+    height: 15px;
+    background: radial-gradient(circle, #f29e62 50%, #ce6d0e 100%);
+    border-radius: 50%;
+    position: absolute;
+    left: 70px;
+    top: 2px;
+}
+
+/* -------------------------------
+   SCATTERED FLOWER PETALS
+---------------------------------*/
+.scattered-flowers {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.flower-petal {
+    width: 15px;
+    height: 15px;
+    background: radial-gradient(circle, #ff6b6b 0%, #a61012 100%);
+    border-radius: 50%;
+    position: absolute;
+    animation: float 3s ease-in-out infinite;
+}
+
+.flower-petal:nth-child(1) {
+    left: 200px;
+    top: 100px;
+}
+
+.flower-petal:nth-child(2) {
+    left: 500px;
+    top: 400px;
+    animation-delay: 1s;
+}
+
+.flower-petal:nth-child(3) {
+    left: 300px;
+    top: 500px;
+    animation-delay: 2s;
+}
+
+/* -------------------------------
+   FINAL GREETING MESSAGE
+---------------------------------*/
+#final-message-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #f29e62 0%, #ffd700 50%, #ff6b6b 100%);
+}
+
+#final-message {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 4rem;
+    border-radius: 25px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    position: relative;
+    backdrop-filter: blur(15px);
+}
+
+#final-message h1 {
+    color: #a61012;
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    animation: bounce 1s ease-in-out infinite alternate;
+}
+
+#final-message p {
+    color: #521101;
+    font-size: 1.3rem;
+    font-style: italic;
+}
+
+/* -------------------------------
+   CELEBRATION SPARKLES
+---------------------------------*/
+.celebration-elements {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.sparkle {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle, #ffd700 30%, transparent 70%);
+    border-radius: 50%;
+    animation: sparkle-float 2s ease-in-out infinite;
+}
+
+.sparkle:nth-child(1) {
+    top: 20%;
+    left: 20%;
+}
+
+.sparkle:nth-child(2) {
+    top: 30%;
+    right: 20%;
+    animation-delay: 0.7s;
+}
+
+.sparkle:nth-child(3) {
+    bottom: 20%;
+    left: 50%;
+    animation-delay: 1.4s;
+}
+
+/* -------------------------------
+   KEYFRAME ANIMATIONS
+---------------------------------*/
+@keyframes glow {
+    0% { opacity: 0.7; transform: scale(1); }
+    100% { opacity: 1; transform: scale(1.1); }
+}
+
+@keyframes sparkle {
+    0% { transform: translate(-50%, -50%) rotate(0deg) scale(1); }
+    100% { transform: translate(-50%, -50%) rotate(360deg) scale(1.2); }
+}
+
+@keyframes flicker {
+    0% { transform: rotate(-2deg) scale(1); }
+    100% { transform: rotate(2deg) scale(1.1); }
+}
+
+@keyframes float {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(180deg); }
+    100% { transform: translateY(0px) rotate(360deg); }
+}
+
+@keyframes bounce {
+    0% { transform: translateY(0px); }
+    100% { transform: translateY(-10px); }
+}
+
+@keyframes sparkle-float {
+    0% { transform: translateY(0px) rotate(0deg) scale(1); opacity: 0; }
+    50% { transform: translateY(-20px) rotate(180deg) scale(1.5); opacity: 1; }
+    100% { transform: translateY(0px) rotate(360deg) scale(1); opacity: 0; }
+}
+
+/* -------------------------------
+   STATE-BASED CLASS ANIMATIONS
+---------------------------------*/
+.rakhi-appear .rakhi-thread,
+.rakhi-appear .rakhi-center {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.hands-active .sister-hand {
+    opacity: 1;
+    transform: rotate(25deg) translateY(0px);
+}
+
+.hands-active .right-hand {
+    transform: rotate(-15deg) translateY(0px);
+}
+
+/* -------------------------------
+   RESPONSIVE DESIGN
+---------------------------------*/
+@media (max-width: 768px) {
+    #rakhi-scene {
+        width: 100vw;
+        height: 100vh;
+        transform: scale(0.7);
+    }
+
+    #greeting-message h1 {
+        font-size: 2rem;
+    }
+
+    #final-message h1 {
+        font-size: 2.5rem;
+    }
+}
