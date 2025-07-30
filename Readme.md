@@ -69,4 +69,4 @@ Created by **Devang**
 
 ## 📄 License
 
-This project is for educational use. Feel free
+This project is for educational use. Feel free to use and modify it as you wish. Please give appropriate credit to the original creator.

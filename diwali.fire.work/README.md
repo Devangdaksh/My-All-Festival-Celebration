@@ -1,51 +1,65 @@
-# My All Festival Celebration
+# 🎆 Diwali Firework Celebration
 
-A collection of festive web projects to celebrate major festivals with interactive animations, greetings, and social media integration.
+Celebrate Diwali with stunning fireworks, glowing greetings, and interactive social icons!  
+This festive web project brings the spirit of Diwali to your screen with beautiful animations and easy customization.
 
-## Projects Included
+---
 
-- **Diwali Firework Celebration**
-  - Animated fireworks using Canvas
-  - Glowing Diwali greeting
-  - Floating social media icons
-  - Popup notification for unavailable links
-
-*(Add more festival projects here as you create them!)*
-
-## Folder Structure
+## 📁 Folder Structure
 
 ```
-My All Festival Celebration/
-│
-├── diwali.fire.work/
-│   ├── README.md
-│   ├── diwalifirework.html
-│   ├── diwalifirework.css
-│   ├── diwalifirework.js
-│   └── FuzzyBubbles-Bold.ttf
-│
-└── ... (other festival folders)
+diwali.fire.work/
+├── diwalifirework.html
+├── diwalifirework.css
+├── diwalifirework.js
+├── FuzzyBubbles-Bold.ttf
+├── README.md
 ```
 
-## How to Use
+---
 
-1. **Clone or Download** this repository.
-2. Open any festival folder (e.g., `diwali.fire.work`).
-3. Open the main HTML file (e.g., `diwalifirework.html`) in your browser.
-4. Enjoy the celebration page!
+## 🛠️ Language Usage
 
-## Customization
+- 🟧 **HTML**: 40%  
+- 🟦 **CSS**: 35%  
+- 🟨 **JavaScript**: 25%  
 
-- Update social media links in the HTML files.
-- Change greeting messages or styles in the CSS.
-- Adjust animation parameters in the JS files.
+---
 
-## Credits
+## ✨ Features
 
-- Fireworks animation and web design by [Devang](https://github.com/Devangdaksh)
+- 🎇 **Animated Fireworks** (Canvas)
+- 🌟 **Glowing Diwali Greeting**
+- 📱 **Responsive Design**
+- 🔗 **Floating Social Media Icons**
+- 🚨 **Popup Notification for Unavailable Links**
+- 📝 **Easy Customization**
+
+---
+
+## 🚀 How to Use
+
+1. **Clone or Download** this folder.
+2. Open `diwalifirework.html` in your browser.
+3. Enjoy the Diwali celebration and interact with the page!
+
+---
+
+## 🎨 Customization
+
+- Edit greeting messages in the HTML.
+- Change colors and styles in the CSS.
+- Adjust animation parameters in the JS file.
+- Update social media links as needed.
+
+---
+
+## 🙏 Credits
+
+- Animation & design by [Devang](https://github.com/Devangdaksh)
 - Social icons: [Feather Icons](https://feathericons.com/)
 - Fonts: Custom and Google Fonts
 
 ---
 
-**Celebrate every festival
+**🪔 Happy Diwali!**
